@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "./dist",
+    "outDir": ".build",
+    "rootDir": "./",
     "target": "es5",
     "module": "commonjs",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,

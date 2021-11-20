@@ -4,21 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon dist/index.js",
-    "watch": "tsc -w",
-    "start": "ts-node src/index.ts"
+    "deploy": "npx serverless deploy",
+    "start": "ts-node src/index.ts",
+    "start:local": "npx serverless offline --noPrependStageInUrl"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^16.7.10",
     "nodemon": "^2.0.4",
-    "ts-node": "^10.2.1",
-    "typescript": "^4.4.2"
+    "serverless": "^2.66.2",
+    "serverless-dotenv-plugin": "^3.10.0",
+    "serverless-offline": "^8.2.0",
+    "serverless-plugin-typescript": "^2.1.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
   },
   "dependencies": {
     "@notionhq/client": "^0.3.1",
     "@slack/bolt": "^3.6.0",
+    "@types/aws-lambda": "^8.10.85",
+    "dotenv": "^10.0.0",
     "prettier": "^2.3.2"
   }
 }

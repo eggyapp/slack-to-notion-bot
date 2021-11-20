@@ -1,0 +1,26 @@
+service: serverless-ticket-bot
+frameworkVersion: '2'
+provider:
+  name: aws
+  region: ap-southeast-2
+  runtime: nodejs12.x
+  environment:
+    SLACK_SIGNING_SECRET: ${env:SLACK_SIGNING_SECRET}
+    SLACK_BOT_TOKEN: ${env:SLACK_BOT_TOKEN}
+functions:
+  slack-events:
+    handler: src/slack.handler
+    events:
+      - http:
+          path: slack/events
+          method: post
+  slack-commands:
+    handler: src/slack.handler
+    events:
+      - http:
+          path: slack/commands
+          method: post
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+  - serverless-dotenv-plugin
